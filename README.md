@@ -1,17 +1,17 @@
-# sqlite3_crud
-SQLITE3 CRUD Shell
+# Timetable_Python-SQLitecrud
+Shell
 # Python 3.9
 
 # USAGE
 Clone the repo from github
 
-git clone https://github.com/cespavtech/sqlite3_crud
+git clone https://github.com/CodeFalcon363/Timetable_Python-SQLitecrud
 
-cd sqlite3_crud
+cd Timetable_Python-SQLitecrud
 
 main.py
 
-# COMANDS
+# COMMANDS
 SYNTAX
 
 [comand] [-item] [-key] [value]<br>
@@ -26,7 +26,7 @@ It can be any of the following
 -c for Course<br>
 -m for Module<br>
 -r for Rooms<br>
--s for Semester<br>
+-s for Session<br>
 
 <h4>[-key]</h4>
 
@@ -63,9 +63,14 @@ It can be any fo the following depending on the item used with
 -rn for room name
 
 <h4>-s</h4>
--ss for semester slug<br>
--si for semester ID<br>
--sn for semester name
+-ss for session slug<br>
+-si for session ID<br>
+-st for session tutor<br>
+-sd for session day<br>
+-sb for session begining time<br>
+-se for session end time<br>
+-sr for session room<br>
+-sc for session category
 
 
 [comand]
@@ -94,14 +99,14 @@ This report includes, % of attended modules/sessions hours for students and work
 Update specific item's data<br>
 Please remember the first argument is used to refer to item (-ue to update user data using email)
 <h4>Examples</h4>
-update -u -ue example@mail1.com -un Abdirahim Abdi -ua staff<br>
+update -u -ue example@mail1.com -un Anthony Oise -ua staff<br>
 Above comand will update names and account type of user with email address example1.com
 
   <h4>create</h4>
 
 Create new item<br>
 <h4>Examples</h4>
-create -u -ue example@mail.com -un Abdirahim Abdi -ua student -urs r_1 -up password<br>
+create -u -ue example@mail.com -un Anthony Oise -ua student -urs r_1 -up password<br>
 Above comand will create a new student account if no user with example@mail.com email address is found!<br>
 Keep close look at how we passed other arguments, all arguments are optional except -ue (email address)<br>
 If a value is missing and required, you will be prompted to enter it
@@ -118,7 +123,7 @@ If the -force argument is not passed, you will be prompted to confirm user delet
 
 Assign an item to other item (e.g. module to course or course to semester)<br>
 <h4>Examples</h4>
-assign -c -ue example@mail.com -cs web_dev<br>
+assign -u -c -ue example@mail.com -cs web_dev<br>
 Above example will assign the course with slug web_dev to user with email address example@mail.com<br>
 assign -m -mi 3 -cs sem_ce2<br>
 Above comand will add module with id 3 to course with slug sem_c2
